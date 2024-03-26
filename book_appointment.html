@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Care - Book Your Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CAR CARE</h1>
+        </header>
+        <main>
+            <section class="appointment-section">
+                <form id="appointmentForm" action="appointment.php" method="post">
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required><br>
+                    <label for="carColor">Car Color:</label>
+                    <input type="text" id="carColor" name="carColor" required><br>
+                    <label for="carLicense">Car Ragistration Number:</label>
+                    <input type="text" id="carLicense" name="carLicense" required><br>
+                    <label for="carEngine">Car Engine Number:</label>
+                    <input type="text" id="carEngine" name="carEngine" required><br>
+                    <label for="appointmentDate">Appointment Date:</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required><br>
+                    <label for="mechanic">Select Mechanic:</label>
+                    <select id="mechanic" name="mechanic"></select><br>
+                    <input type="submit" value="Submit">
+    
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Designed by <strong>Pravakar Das</strong></p>
+            <p>
+                <a href="https://www.facebook.com/yourprofile">Facebook</a> |
+                <a href="mailto:your@email.com">Email</a> |
+                <a href="https://github.com/yourprofile">GitHub</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'fetch_mechanics.php',
+                type: 'GET',
+                success: function (data) {
+                    var mechanics = JSON.parse(data);
+                    var select = $('#mechanic');
+                    select.empty();
+                    $.each(mechanics, function (index, mechanic) {
+                        select.append('<option value="' + mechanic.mechanic_id + '">' + mechanic.mechanic_name + '</option>');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

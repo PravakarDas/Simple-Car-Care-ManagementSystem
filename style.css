@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('wallpaperflare.com_wallpaper.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: auto; /* Allows vertical scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #FEFDED;
+    font-family: 'Italianno', cursive;
+    font-size: 90px;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appointment-section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.appointment-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #5CDB95;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #379683;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #FEFDED;
+}
+
+footer a {
+    color: #FEFDED;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
